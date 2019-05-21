@@ -28,18 +28,18 @@ END FUNCTION mag
 FUNCTION cross_product(a,b)
     IMPLICIT NONE
 
-    !----------------------------------------------------------------------------------------------                                                                             
-    !Esta función calcula el producto cruz entre dos vectores usando el pseudotensor de Levi Civita                                                                             
-    !----------------------------------------------------------------------------------------------                                                                             
+    !----------------------------------------------------------------------------------------------
+    !Esta función calcula el producto cruz entre dos vectores usando el pseudotensor de Levi Civita
+    !----------------------------------------------------------------------------------------------
 
-    !Declaración de variables                                                                                                                                                   
+    !Declaración de variables
                                                                                                                    
-    REAL(d),INTENT(IN),DIMENSION(3)::a,b !vectores con los que se calculará el producto cruz                                                                                    
-    REAL(d),DIMENSION(3)::cross_product !resultado del producto cruz                                                                                                            
-    INTEGER,DIMENSION(3,3,3)::e !pseudotensor de Levi Civita                                                                                                                    
+    REAL(d),INTENT(IN),DIMENSION(3)::a,b !vectores con los que se calculará el producto cruz
+    REAL(d),DIMENSION(3)::cross_product !resultado del producto cruz
+    INTEGER,DIMENSION(3,3,3)::e !pseudotensor de Levi Civita
     INTEGER::i,j,k
 
-    !inicializacion del pseudotensor                                                                                                                                            
+    !inicializacion del pseudotensor
     e = 0
     e(1,2,3) = 1
     e(2,3,1) = 1
@@ -47,13 +47,14 @@ FUNCTION cross_product(a,b)
     e(3,2,1) = -1
     e(1,3,2) = -1
     e(2,1,3) = -1
-
+    
+    cross_product = 0.0_d !se inicializa el valor de la función
     ciclo_indice_e: DO i=1, 3
        ciclo_incdice_a: DO j=1, 3
           IF (i/=j) THEN
              ciclo_indice_b: DO k=1, 3
 		IF (i/=k .OR. j/=k) THEN
-                   cross_product(i) = cross_product(i) + e(i,j,k)*a(j)*b(k)
+                   cross_product(i) = cross_product(i) + e(i,j,k)*a(j)*b(k) !calculo del i-éseimo elemento
                 END IF
              END DO ciclo_indice_b
           END IF
