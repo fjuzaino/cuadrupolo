@@ -33,9 +33,9 @@ FUNCTION cross_product(a,b)
     !----------------------------------------------------------------------------------------------                                                                             
 
     !Declaración de variables                                                                                                                                                   
-    INTEGER,PARAMETER::q=SELECTED_REAL_KIND(16) !kind de 16                                                                                                                     
-    REAL(q),INTENT(IN),DIMENSION(3)::a,b !vectores con los que se calculará el producto cruz                                                                                    
-    REAL(q),DIMENSION(3)::cross_product !resultado del producto cruz                                                                                                            
+                                                                                                                   
+    REAL(d),INTENT(IN),DIMENSION(3)::a,b !vectores con los que se calculará el producto cruz                                                                                    
+    REAL(d),DIMENSION(3)::cross_product !resultado del producto cruz                                                                                                            
     INTEGER,DIMENSION(3,3,3)::e !pseudotensor de Levi Civita                                                                                                                    
     INTEGER::i,j,k
 
