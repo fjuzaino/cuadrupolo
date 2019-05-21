@@ -11,8 +11,8 @@ SUBROUTINE eKU(a,b)
   !i: Contador
   !a: Variable dummy para el protonmovil enviado del programa principal
   !-------------------------------------------
-  REAL::ac,r,K,U
-  TYPE(charged_particle),INTENT(IN)::a
+  REAL::ac,r,K,U !aceleración, radio, energía cinetica y potencial respectivamente
+  TYPE(charged_particle),INTENT(IN)::a 
   REAL,INTENT::b
   OPEN(UNIT=1,FILE="Graph",STATUS="UNKNOWN",ACTION="WRITE")
   a%vel=a%mom/a%mass
