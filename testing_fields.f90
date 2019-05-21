@@ -44,7 +44,7 @@ sim%ttot = 2E-11_d !!En este ejemplo se realizar´a la
 sim%dt = sim%ttot/sim%N_step !!Calculando el ancho de paso
 
 !!Abriendo el archivo de texto
-OPEN(NEWUNIT=unit0,FILE="Sim_ejemplo",STATUS="UNKNOWN",ACCESS="APPEND")
+OPEN(NEWUNIT=unit0,FILE="Sim_ejemplo",STATUS="UNKNOWN",ACTION="WRITE")
 
 t=0 !!La simulaci´on inicia al tiempo t=0
 !Repetir el proceso hasta que se cumpla la condici´on
