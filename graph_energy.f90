@@ -12,7 +12,7 @@ SUBROUTINE eKU(a,b)
   !a: Variable dummy para el protonmovil enviado del programa principal
   !-------------------------------------------
   REAL::ac,r,Ki,U !aceleración, radio, energía cinetica y potencial respectivamente
-  TYPE(charged_particle),INTENT(IN)::a !partícula cargada
+  TYPE(charged_particles),INTENT(IN)::a !partícula cargada
   REAL,INTENT::b !!tiempo
 	
 	!Se abre el archivo donde se tabulará
