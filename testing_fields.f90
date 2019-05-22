@@ -64,6 +64,7 @@ antiproton%Felec = antiproton%q*(antiproton%Eelec + cross_product(antiproton%mom
 antiproton%mom = antiproton%mom + antiproton%Felec * sim%dt
 !!Actualizando la posición
 antiproton%pos = antiproton%pos + antiproton%mom / antiproton%mass * sim%dt
+CALL graph_energy(antiproton, t)
 WRITE(unit0,*) t , antiproton%pos*scale !!Escribiendo en el archivo
 t = t + sim%dt !!Actualizando el tiempo
 ENDDO
