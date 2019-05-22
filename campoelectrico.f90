@@ -3,7 +3,7 @@ USE charged_particles
 USE vector_functions
   IMPLICIT NONE
   REAL,DIMENSION(3)::a,b
-  protonmovil%Eelect=0.0_d
+ ! protonmovil%Eelect=0.0_d !!No hace falta
   sim%pos2 = a%pos-b%pos !!Calculando el vector r=r2-r1
   runit=sim%pos2/mag(sim%pos2)
   !!Calculando la interacción eléctrica.
