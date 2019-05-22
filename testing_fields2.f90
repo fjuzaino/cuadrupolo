@@ -67,6 +67,7 @@ t=0 !!La simulación inicia al tiempo t=0
 !Repetir el proceso hasta que se cumpla la condición
 DO
 IF(t > sim%ttot ) EXIT
+protonmovil%Felec = 0.0_d !!Se reinicia la fuerza neta para este instante
 DO j=1,4
 CALL campoelectrico(protonmovil,particulas(j))
 END DO
