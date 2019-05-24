@@ -9,6 +9,7 @@ INTEGER , PARAMETER :: d = SELECTED_REAL_KIND ( 16 )
 !!Introduciendo las unidades naturales del sistema
 REAL(d),PARAMETER::pi=3.14159265358979_d !!Pi con este Kind
 REAL(d),PARAMETER::k=9E9_d !!K con este Kind
+REAL(d),DIMENSION(3):: runit
 
 !!Tipo publico para producir objetos del tipo planeta
 TYPE,PUBLIC::charged_particles
