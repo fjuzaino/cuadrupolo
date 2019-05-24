@@ -1,4 +1,4 @@
-SUBROUTINE eKU(a,b,r,C)
+SUBROUTINE graph_energy(a,b,r,C)
   USE charged_objects
   USE vector_functions
   IMPLICIT NONE
@@ -26,4 +26,4 @@ SUBROUTINE eKU(a,b,r,C)
                 !!usar la formula para n-cargas
   WRITE(132,*)b,U,Ki,U+Ki  !tabular la gráfica
   CLOSE(132)
-END SUBROUTINE eKU
+END SUBROUTINE graph_energy
