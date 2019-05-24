@@ -68,15 +68,20 @@ t=0 !!La simulación inicia al tiempo t=0
 DO
 IF(t > sim%ttot ) EXIT
 protonmovil%Felec = 0.0_d !!Se reinicia la fuerza neta para este instante
-DO j=1,4
-CALL campoelectrico(protonmovil,particulas(j))
+DO j=1,4rged_particles
+3
+USE vector_functions
+! protonmovil%Eelect=0.0_d !!No hace falta
+sim%pos2 = a%pos-b%pos !!Calculando el vector r=r2-r1
+runit=sim%pos2/mag(sim%pos2)
+CALL campoelectrico(protonmovil,particulas(j),sim%pos2,runit)
+CALL eKU(protonmovil,t,sim%pos2,runit)
 END DO
 !!Actualizando el momento lineal
 protonmovil%mom = protonmovil%mom + protonmovil%Felec * sim%dt
 !!Actualizando la posición
 protonmovil%pos = protonmovil%pos + protonmovil%mom / protonmovil%mass * sim%dt
 WRITE(unit0,*) t , protonmovil%pos*scale !!Escribiendo en el archivo
-CALL eKU(protonmovil,t)
 t = t + sim%dt !!Actualizando el tiempo
 END DO
 
