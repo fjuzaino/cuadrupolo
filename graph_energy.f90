@@ -15,14 +15,12 @@ SUBROUTINE eKU(a,b,r,C)
   !B: Tiempo
   !-------------------------------------------
   REAL(d)::r,Ki,U !radio, energía cinetica y potencial respectivamente
-  REAL(d),DIMENSION(3)::ac
   TYPE(charged_particles),INTENT(IN)::a !partícula cargada
   REAL(d),INTENT(IN)::b !!tiempo
 	
 	!Se abre el archivo donde se tabulará
   OPEN(UNIT=132,FILE="Graph",STATUS="UNKNOWN",ACTION="WRITE",ACCESS="APPEND")
  !! a%vel=a%mom/a%mass !velocidad de la partícula
-  ac=a%Felec/a%mass
   Ki=(1.0/2.0)*a%mass*mag(a%mom/a%mass)**2 !calculo de la energía cinética
   U= k*a%q*(C/(MAG(r)))            !energía potencial con n cargas puntuales
                 !!usar la formula para n-cargas
