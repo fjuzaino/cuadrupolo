@@ -16,11 +16,11 @@ SUBROUTINE graph_energy(a,b,r,C)
   REAL(d),INTENT(IN)::b !!tiempo
 	
 	!Se abre el archivo donde se tabulará
-  OPEN(UNIT=132,FILE="Graph",STATUS="UNKNOWN",ACTION="WRITE",ACCESS="APPEND")
- !! a%vel=a%mom/a%mass !velocidad de la partícula
+
+!! a%vel=a%mom/a%mass !velocidad de la partícula
   Ki=(1.0/2.0)*a%mass*mag(a%mom/a%mass)**2 !calculo de la energía cinética
   U= k*a%q*(C/(mag(r)))            !energía potencial con n cargas puntuales
                 !!usar la formula para n-cargas
-  WRITE(132,*)b,U,Ki,U+Ki  !tabular la gráfica
-  CLOSE(132)
-END SUBROUTINE graph_energy
+  WRITE(unit1,*)b,U,Ki,U+Ki  !tabular la gráfica
+  
+  END SUBROUTINE graph_energy
