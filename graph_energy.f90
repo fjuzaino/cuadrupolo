@@ -19,8 +19,8 @@ SUBROUTINE graph_energy(a,b,r,C)
 
 !! a%vel=a%mom/a%mass !velocidad de la partícula
   Ki=(1.0/2.0)*a%mass*mag(a%mom/a%mass)**2 !calculo de la energía cinética
-  U= k*a%q*(C/(mag(r)))            !energía potencial con n cargas puntuales
+  U= k*a%q*C/mag(r)            !energía potencial con n cargas puntuales
                 !!usar la formula para n-cargas
-  WRITE(unit1,*)b,U,Ki,U+Ki  !tabular la gráfica
+  WRITE(unit1,*) b,U,Ki,U+Ki  !tabular la gráfica
   
   END SUBROUTINE graph_energy
