@@ -33,6 +33,7 @@ REAL ( d ) :: N_step !!Cantidad de pasos
 REAL ( d ), DIMENSION ( 3 ) :: Fenet !!Fuerza el´ectrica neta
 REAL ( d ), DIMENSION ( 3 ) :: pos2 !!Vector donde se guarda la
 !!diferencia de posici´on entre los objetos
+INTEGER::unit1=132 !!unidad donde se escribirá la energía potenacial y cinética
 END TYPE data
 
 END MODULE charged_objects
