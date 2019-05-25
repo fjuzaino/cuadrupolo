@@ -5,5 +5,5 @@ m="./Sim_ejemplo"
 
 set nokey
 set grid
-set title 'Proton en un cuaripolo'
+set title 'Proton en un cuadrupolo'
 splot m u 2:3:4
