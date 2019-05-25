@@ -50,6 +50,8 @@ sim%dt = sim%ttot/sim%N_step !!Calculando el ancho de paso
 
 !!Abriendo el archivo de texto
 OPEN(NEWUNIT=unit0,FILE="Sim_ejemplo",STATUS="UNKNOWN",ACCESS="APPEND")
+!!Archivo donde se escirbirán la energía cinética y potencial
+OPEN(NEWUNIT=unit1,FILE="Energies",STATIS="UNKNOWN",ACCESS="APPEND")
 
 t=0 !!La simulación inicia al tiempo t=0
 !Repetir el proceso hasta que se cumpla la condición
@@ -68,7 +70,7 @@ CALL graph_energy(antiproton, t, sim%pos2, proton%q)
 WRITE(unit0,*) t , antiproton%pos*scale !!Escribiendo en el archivo
 t = t + sim%dt !!Actualizando el tiempo
 ENDDO
-
+CLOSE ( unit1 )
 CLOSE ( unit0 )
 !!Este archivo sirve para la informaci´on del sol
 OPEN ( NEWUNIT = unit0 , FILE = "proton" , STATUS = "UNKNOWN" )
